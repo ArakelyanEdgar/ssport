@@ -4,7 +4,11 @@
   "description": "Matchmaker for competitive sports",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm run serve",
+    "serve": "node dist/server.js",
+    "build": "npm run build-ts && npm run copy-static-assets",
+    "build-ts": "tsc",
+    "copy-static-assets": "ts-node CopyStaticAssets.ts"
   },
   "repository": {
     "type": "git",
@@ -17,6 +21,14 @@
   },
   "homepage": "https://github.com/ArakelyanEdgar/ssport#readme",
   "dependencies": {
+    "@types/dotenv": "^6.1.0",
+    "dotenv": "^6.2.0",
     "npm": "^6.5.0"
+  },
+  "devDependencies": {
+    "@types/shelljs": "^0.8.1",
+    "shelljs": "^0.8.3",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.2.2"
   }
 }
